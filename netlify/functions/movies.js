@@ -44,7 +44,7 @@ exports.handler = async function(event) {
 
         // check if the movie from the year and genre requested
 
-        if (movie.startYear >= year && movie.genres >= genre) {
+        if (movie.startYear ==`year` && movie.genres == `genre`) {
         
           // add the movie to the Array of movies to return
           moviesToReturn.movies.push(movie)
