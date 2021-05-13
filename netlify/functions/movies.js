@@ -47,11 +47,13 @@ exports.handler = async function(event) {
         // store each movie in memory from the CSV
         let film = moviesFromCsv[i]
 
-        // check if the movie from the year and genre requested
+        // check if the movie includes the genre requested
 
       if (film.genres.includes(genre)){
 
-        if (film.startYear == year && film.genres !== `\\N` && film.runtimeMinutes !== `\\N`) {
+        // check if the movie is from the year requested and does not include movies with no runtime or no genre
+
+        if (film.startYear == year && film.runtimeMinutes !== `\\N`) {
 
           // Create a movie object containing the pertinent fields we want
 
