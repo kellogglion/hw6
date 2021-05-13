@@ -56,7 +56,8 @@ exports.handler = async function(event) {
           let Object = {
             title: film.primaryTitle,
             year: film.startYear,
-            genres: film.genres
+            genres: film.genres,
+            runtime: film.runtimeMinutes
           }
         
           // add the movie to the Array of movies to return
