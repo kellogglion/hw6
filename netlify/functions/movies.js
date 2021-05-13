@@ -55,7 +55,7 @@ exports.handler = async function(event) {
 
         if (film.startYear == year && film.genres !== `\\N` && film.runtimeMinutes !== `\\N`) {
 
-          // Create a movie object containing the pertinent fields we want
+          // Create a movie object containing the pertinent fields we want to return
 
           let Object = {
             title: film.primaryTitle,
@@ -74,7 +74,7 @@ exports.handler = async function(event) {
 
     moviesToReturn.numResults = moviesToReturn.movies.length
 
-    // a lambda function returns a status code and a string of data
+    // lambda function returns status code and a JSON string from the moviesToReturn Array
     return {
       statusCode: 200, // https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
       body: JSON.stringify(moviesToReturn) // a string of data returned
