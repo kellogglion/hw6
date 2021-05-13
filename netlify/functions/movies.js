@@ -49,7 +49,7 @@ exports.handler = async function(event) {
 
         // check if the movie from the year and genre requested
 
-        if (film.startYear == year && film.genres == genre && film.genres !== `\\N` && film.runtimeMinutes !== `\\N`) {
+        if (film.startYear == year && film.genres includes(genre) && film.genres !== `\\N` && film.runtimeMinutes !== `\\N`) {
 
           // Create a movie object containing the pertinent fields we want
 
