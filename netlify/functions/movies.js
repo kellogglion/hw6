@@ -7,7 +7,7 @@ let fs = require('fs')
 // defines a lambda function
 exports.handler = async function(event) {
   // write the event object to the back-end console
-  console.log(event)
+  // console.log(event)
 
   // read movies CSV file from disk
   let moviesFile = fs.readFileSync(`./movies.csv`)
@@ -16,7 +16,7 @@ exports.handler = async function(event) {
   let moviesFromCsv = await csv(moviesFile)
 
   // write the movies to the back-end console, check it out
-  console.log(moviesFromCsv)
+  // console.log(moviesFromCsv)
 
   // 🔥 hw6: your recipe and code starts here!
   let year = event.queryStringParameters.year
@@ -45,22 +45,22 @@ exports.handler = async function(event) {
     for (let i=0; i < moviesFromCsv.length; i++) {
 
         // store each movie in memory from the CSV
-        let movie = moviesFromCsv[i]
+        let film = moviesFromCsv[i]
 
         // check if the movie from the year and genre requested
 
-        if (movie.startYear == year && movie.genres == genre) {
+        if (film.startYear == year && film.genres == genre) {
 
           // Create a movie object containing the pertinent fields we want
 
-          let movieObject = {
-            title: movie.primaryTitle,
-            year: movie.startYear,
-            genres: movie.genres
+          let Object = {
+            title: film.primaryTitle,
+            year: film.startYear,
+            genres: film.genres
           }
         
           // add the movie to the Array of movies to return
-          moviesToReturn.movies.push(movieObject)
+          moviesToReturn.movies.push(Object)
         }
     }
 
