@@ -16,7 +16,7 @@ exports.handler = async function(event) {
   let moviesFromCsv = await csv(moviesFile)
 
   // write the movies to the back-end console, check it out
-  // console.log(moviesFromCsv)
+  console.log(moviesFromCsv)
 
   // 🔥 hw6: your recipe and code starts here!
   let year = event.queryStringParameters.year
@@ -53,16 +53,16 @@ exports.handler = async function(event) {
 
           // Create a movie object containing the pertinent fields we want
 
-          let movieObject = {
-            title = movie.primaryTitle,
-            year = movie.startYear,
-            genres = movie.genres
-          }
+    //       let movieObject = {
+    //         title = movie.primaryTitle,
+    //         year = movie.startYear,
+    //         genres = movie.genres
+    //       }
         
-          // add the movie to the Array of movies to return
-          moviesToReturn.movies.push(movieObject)
-        }
-    }
+    //       // add the movie to the Array of movies to return
+    //       moviesToReturn.movies.push(movieObject)
+    //     }
+    // }
 
     // add the number of movies to the returned movies object
 
