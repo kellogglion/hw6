@@ -53,14 +53,14 @@ exports.handler = async function(event) {
 
           // Create a movie object containing the pertinent fields we want
 
-    //       let movieObject = {
-    //         title = movie.primaryTitle,
-    //         year = movie.startYear,
-    //         genres = movie.genres
-    //       }
+          let movieObject = {
+            title: movie.primaryTitle,
+            year: movie.startYear,
+            genres: movie.genres
+          }
         
-    //       // add the movie to the Array of movies to return
-    //       moviesToReturn.movies.push(movieObject)
+          // add the movie to the Array of movies to return
+          moviesToReturn.movies.push(movieObject)
         }
     }
 
