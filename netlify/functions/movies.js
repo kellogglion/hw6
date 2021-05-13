@@ -61,8 +61,8 @@ exports.handler = async function(event) {
         
     //       // add the movie to the Array of movies to return
     //       moviesToReturn.movies.push(movieObject)
-    //     }
-    // }
+        }
+    }
 
     // add the number of movies to the returned movies object
 
@@ -73,5 +73,7 @@ exports.handler = async function(event) {
       statusCode: 200, // https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
       body: JSON.stringify(moviesToReturn) // a string of data returned
     }
+
+
   }
 }
