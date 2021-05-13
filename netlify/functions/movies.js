@@ -22,12 +22,17 @@ exports.handler = async function(event) {
   let year = event.queryStringParameters.year
   let genre = event.queryStringParameters.genre
   
+// Return an error message if neither parameter is provided
+
   if (year == undefined || genre == undefined) {
     return {
       statusCode: 200, // https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
       body: `Nope!` // a string of data
     }
   }
+
+// If parameters are provided, create an array to be returned by the API
+
   else {
     let moviesToReturn = {
       numResults: 0,
@@ -45,9 +50,17 @@ exports.handler = async function(event) {
         // check if the movie from the year and genre requested
 
         if (movie.startYear == year && movie.genres == genre) {
+
+          // Create a movie object containing the pertinent fields we want
+
+          let movieObject = {
+            title = movie.primaryTitle,
+            year = movie.startYear,
+            genres = movie.genres
+          }
         
           // add the movie to the Array of movies to return
-          moviesToReturn.movies.push(movie)
+          moviesToReturn.movies.push(movieObject)
         }
     }
 
