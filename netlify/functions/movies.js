@@ -49,7 +49,9 @@ exports.handler = async function(event) {
 
         // check if the movie from the year and genre requested
 
-        if (film.startYear == year && film.genres includes(genre) && film.genres !== `\\N` && film.runtimeMinutes !== `\\N`) {
+      if (film.genres.includes(genre)){
+
+        if (film.startYear == year && film.genres !== `\\N` && film.runtimeMinutes !== `\\N`) {
 
           // Create a movie object containing the pertinent fields we want
 
@@ -63,6 +65,7 @@ exports.handler = async function(event) {
           // add the movie to the Array of movies to return
           moviesToReturn.movies.push(Object)
         }
+      }
     }
 
     // add the number of movies to the returned movies object
